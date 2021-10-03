@@ -6,6 +6,11 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 
+# PROJECTS
+w4-first-springapp/target
+w4-first-springapp/.mvn/wrapper/maven-wrapper.jar
+w4-first-springapp/.idea
+
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
