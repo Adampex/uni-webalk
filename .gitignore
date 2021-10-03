@@ -7,6 +7,9 @@ yarn-error.log*
 lerna-debug.log*
 
 # PROJECTS
+w3-szamologep-szervlet/.idea
+w3-szamologep-szervlet/target
+
 w4-first-springapp/target
 w4-first-springapp/.mvn/wrapper/maven-wrapper.jar
 w4-first-springapp/.idea
