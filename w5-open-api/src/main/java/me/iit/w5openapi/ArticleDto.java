@@ -3,6 +3,7 @@ package me.iit.w5openapi;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.util.Objects;
 
 public class ArticleDto {
 
@@ -58,5 +59,18 @@ public class ArticleDto {
                 ", author='" + author + '\'' +
                 ", title='" + title + '\'' +
                 ", pages=" + pages + '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ArticleDto that = (ArticleDto) o;
+        return id.equals(that.id) && author.equals(that.author) && title.equals(that.title) && pages.equals(that.pages);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, author, title, pages);
     }
 }
