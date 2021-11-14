@@ -1,4 +1,6 @@
-package me.iit.w8springdb;
+package me.iit.w8springdb.controller;
+
+import me.iit.w8springdb.service.People;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
@@ -8,10 +10,15 @@ public class PeopleDTO {
     private Long id;
     @NotEmpty
     private String name;
-    @Size(min = 18, max = 60)
+    @Size(min = 18, max = 160)
     private int age;
 
-    public PeopleDTO() {
+    public PeopleDTO() {}
+
+    public PeopleDTO(People people) {
+        this.id = people.getId();
+        this.name = people.getName();
+        this.age = people.getAge();
     }
 
     public Long getId() {
@@ -38,9 +45,5 @@ public class PeopleDTO {
         this.age = age;
     }
 
-    public PeopleDTO(People people) {
-        this.id = people.getId();
-        this.name = people.getName();
-        this.age = people.getAge();
-    }
+
 }
