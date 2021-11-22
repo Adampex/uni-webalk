@@ -45,5 +45,8 @@ public class PeopleDTO {
         this.age = age;
     }
 
+    public People toEntity() {
+        return new People(id, age, name);
+    }
 
 }

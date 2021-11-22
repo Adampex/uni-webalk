@@ -1,5 +1,7 @@
 package me.iit.w8springdb.repository;
 
+import me.iit.w8springdb.service.People;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -43,5 +45,10 @@ public class PeopleModal {
         this.id = id;
         this.age = age;
         this.name = name;
+    }
+
+    public PeopleModal(People people) {
+        this.age = people.getAge();
+        this.name = people.getName();
     }
 }

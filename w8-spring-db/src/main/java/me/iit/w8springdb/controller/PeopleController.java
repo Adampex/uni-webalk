@@ -38,4 +38,14 @@ public class PeopleController {
     public void deleteById(@PathVariable Long id) {
         peopleService.deleteById(id);
     }
+
+    @PutMapping
+    public void updatePeople(@RequestBody @Valid PeopleDTO peopleDTO) {
+        peopleService.save(peopleDTO.toEntity());
+    }
+
+    @GetMapping("/{id}")
+    public PeopleDTO getById(@PathVariable("id") Long id) {
+        return new PeopleDTO(peopleService.getById(id));
+    }
 }
