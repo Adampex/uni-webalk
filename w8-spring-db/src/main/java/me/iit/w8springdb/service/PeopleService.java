@@ -11,4 +11,6 @@ public interface PeopleService {
     People getById(Long id);
 
     void save(People people);
+
+    Iterable<? extends People> findByAgeGreaterThan(int age);
 }

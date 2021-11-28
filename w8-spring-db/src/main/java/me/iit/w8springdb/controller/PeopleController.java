@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("people")
+@RequestMapping("/people")
 public class PeopleController {
 
     private final PeopleService peopleService;
@@ -47,5 +47,14 @@ public class PeopleController {
     @GetMapping("/{id}")
     public PeopleDTO getById(@PathVariable("id") Long id) {
         return new PeopleDTO(peopleService.getById(id));
+    }
+
+    @GetMapping("/findByAgeGt")
+    Iterable<PeopleDTO> findAdultPeople(@RequestParam("age") int age) {
+        List<me.iit.w8springdb.controller.PeopleDTO> peopleDTOList = new ArrayList<>();
+        for (People people : peopleService.findByAgeGreaterThan(age)) {
+            peopleDTOList.add(new me.iit.w8springdb.controller.PeopleDTO(people));
+        }
+        return peopleDTOList;
     }
 }

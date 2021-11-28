@@ -70,4 +70,11 @@ public class PeopleServiceImpl implements PeopleService {
         }
         peopleRepository.save(people.toEntity());
     }
+
+    @Override
+    public Iterable<? extends People> findByAgeGreaterThan(int age) {
+        return StreamSupport.stream(peopleRepository.findAllByAgeGreaterThanEqual(age).spliterator(), false)
+                .map(People:: new)
+                .collect(Collectors.toList());
+    }
 }

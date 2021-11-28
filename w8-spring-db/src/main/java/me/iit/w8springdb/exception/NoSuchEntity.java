@@ -7,4 +7,8 @@ public class NoSuchEntity extends RuntimeException {
         super("No such entity" + id);
         this.id = id;
     }
+
+    public Long getId() {
+        return id;
+    }
 }
